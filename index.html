@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelo García | Consultoría TI & Operaciones</title>
+    <style>
+        :root {
+            --bg-dark: #0b132b;
+            --card-bg: #1c2541;
+            --accent: #4cc9f0;
+            --text-light: #ffffff;
+            --text-gray: #b0c4de;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #050b1a, var(--bg-dark));
+            border-bottom: 2px solid var(--accent);
+        }
+        header h1 {
+            color: var(--text-light);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        header h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            background: var(--card-bg);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .service-card h3 {
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        .service-card ul {
+            padding-left: 20px;
+            color: var(--text-gray);
+        }
+        .service-card li {
+            margin-bottom: 8px;
+        }
+        .catalog {
+            margin-top: 40px;
+        }
+        .catalog h2 {
+            text-align: center;
+            color: var(--accent);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #131b2e;
+            border: 1px solid #2a3b5f;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050b1a;
+            color: var(--text-gray);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MARCELO GARCÍA</h1>
+        <h2>Especialista en Gobierno de Datos, Auditoría de Inventarios & Control Patrimonial</h2>
+        <p style="color: var(--text-gray);">Consultoría Especializada en TI & Operaciones</p>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2 style="color: var(--accent); margin-top: 0;">Transforme el caos operativo en decisiones rentables</h2>
+            <p style="color: var(--text-gray);">Ayudo a empresas y organizaciones a eliminar las fugas de inventario, estructurar sus bases de datos dispersas y construir indicadores clave (KPIs) confiables para una gestión transparente y eficiente.</p>
+            <a href="https://wa.me/584164144017" class="btn">Agende una Sesión de Diagnóstico Inicial</a>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>1. Limpieza, Estructuración y Curación de Datos</h3>
+                <p style="font-size: 0.9rem; color: var(--accent);">OPTIMIZACIÓN & CALIDAD DE INFORMACIÓN GERENCIAL</p>
+                <ul>
+                    <li>Normalización y Depuración</li>
+                    <li>Migración e Integración</li>
+                    <li>Tableros de Control & KPIs</li>
+                    <li>Gobierno de Datos</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>2. Auditoría y Control de Inventarios</h3>
+                <p style="font-size: 0.9rem; color: var(--accent);">PROTECCIÓN DE ACTIVOS & TRAZABILIDAD LOGÍSTICA</p>
+                <ul>
+                    <li>Auditoría Física y Conciliación</li>
+                    <li>Trazabilidad Patrimonial</li>
+                    <li>Detección de Inconsistencias</li>
+                    <li>Manuales de Procedimientos</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE CATÁLOGO DE PRODUCTOS -->
+        <div class="catalog">
+            <h2>Catálogo de Herramientas y Productos</h2>
+            <p style="text-align: center; color: var(--text-gray);">Adquiera soluciones prácticas listas para implementar en su negocio.</p>
+            
+            <div class="product-grid">
+                <!-- Producto 1 (Ejemplo) -->
+                <div class="product-card">
+                    <h4 style="color: var(--text-light);">Plantilla de Control de Inventarios</h4>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Formato automatizado en Excel para control de entradas, salidas y merma.</p>
+                    <p style="font-weight: bold; color: var(--accent);">$25.00</p>
+                    <a href="mailto:mgarcia845@gmail.com?subject=Interes en Plantilla de Control de Inventarios" class="btn">Comprar / Consultar</a>
+                </div>
+                <!-- Producto 2 (Ejemplo) -->
+                <div class="product-card">
+                    <h4 style="color: var(--text-light);">Manual de Procedimientos de Auditoría</h4>
+                    <p style="color: var(--text-gray); font-size: 0.9rem;">Guía paso a paso para levantar inventarios físicos sin errores.</p>
+                    <p style="font-weight: bold; color: var(--accent);">$40.00</p>
+                    <a href="mailto:mgarcia845@gmail.com?subject=Interes en Manual de Procedimientos" class="btn">Comprar / Consultar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>📞 Teléfonos: 0416-4144017 / 0416-8337914 | ✉️ Correo: mgarcia845@gmail.com</p>
+        <p>&copy; 2026 Marcelo García - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
