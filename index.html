@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo García | Consultoría TI & Operaciones - Catálogo de Recursos</title>
+    <title>Marcelo García | Consultoría TI & Operaciones</title>
     <style>
         :root {
             --bg-dark: #0b132b;
@@ -73,12 +73,38 @@
             margin-bottom: 8px;
         }
         
-        /* SECCIÓN DE CATÁLOGO / RECURSOS */
-        .catalog {
-            margin-top: 50px;
-            border-top: 2px dashed #2a3b5f;
-            padding-top: 40px;
+        /* ESTILOS DE BOTONES Y NAVEGACIÓN ENTRE VISTAS */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.2s;
         }
+        .btn:hover {
+            background: #3ab0d5;
+            transform: translateY(-2px);
+        }
+        .btn-catalog-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        /* CONTROL DE VISTAS (PANTALLAS) */
+        .view-section {
+            display: none; /* Ocultas por defecto */
+        }
+        .view-section.active {
+            display: block; /* Solo se muestra la activa */
+        }
+
+        /* SECCIÓN DE CATÁLOGO (SEGUNDA PANTALLA) */
         .catalog h2 {
             text-align: center;
             color: var(--accent);
@@ -121,21 +147,6 @@
             font-size: 1.2rem;
             margin: 10px 0;
         }
-        .btn {
-            display: block;
-            text-align: center;
-            background: var(--accent);
-            color: var(--bg-dark);
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background 0.2s;
-        }
-        .btn:hover {
-            background: #3ab0d5;
-        }
         footer {
             text-align: center;
             padding: 30px;
@@ -154,38 +165,50 @@
     </header>
 
     <div class="container">
-        <!-- SECCIÓN PRINCIPAL / SERVICIOS -->
-        <div class="hero">
-            <h2 style="color: var(--accent); margin-top: 0;">Transforme el caos operativo en decisiones rentables</h2>
-            <p style="color: var(--text-gray);">Ayudo a empresas y organizaciones a eliminar las fugas de inventario, estructurar sus bases de datos dispersas y construir indicadores clave (KPIs) confiables para una gestión transparente y eficiente.</p>
-            <a href="https://wa.me/584164144017" class="btn" style="display: inline-block; width: auto; padding: 12px 25px;">Agende una Sesión de Diagnóstico Inicial</a>
+
+        <!-- ================= PANTALLA 1: INICIO (IMAGEN 1) ================= -->
+        <div id="pantalla-inicio" class="view-section active">
+            <div class="hero">
+                <h2 style="color: var(--accent); margin-top: 0;">Transforme el caos operativo en decisiones rentables</h2>
+                <p style="color: var(--text-gray);">Ayudo a empresas y organizaciones a eliminar las fugas de inventario, estructurar sus bases de datos dispersas y construir indicadores clave (KPIs) confiables para una gestión transparente y eficiente.</p>
+                <a href="https://wa.me/584164144017" class="btn">Agende una Sesión de Diagnóstico Inicial</a>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>1. Limpieza, Estructuración y Curación de Datos</h3>
+                    <p style="font-size: 0.9rem; color: var(--accent);">OPTIMIZACIÓN & CALIDAD DE INFORMACIÓN GERENCIAL</p>
+                    <ul>
+                        <li>Normalización y Depuración</li>
+                        <li>Migración e Integración</li>
+                        <li>Tableros de Control & KPIs</li>
+                        <li>Gobierno de Datos</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>2. Auditoría y Control de Inventarios</h3>
+                    <p style="font-size: 0.9rem; color: var(--accent);">PROTECCIÓN DE ACTIVOS & TRAZABILIDAD LOGÍSTICA</p>
+                    <ul>
+                        <li>Auditoría Física y Conciliación</li>
+                        <li>Trazabilidad Patrimonial</li>
+                        <li>Detección de Inconsistencias</li>
+                        <li>Manuales de Procedimientos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botón para saltar a la Segunda Pantalla -->
+            <div class="btn-catalog-container">
+                <button class="btn" onclick="cambiarVista('pantalla-catalogo')">📦 Ir al Catálogo de Herramientas y Recursos Descargables</button>
+            </div>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>1. Limpieza, Estructuración y Curación de Datos</h3>
-                <p style="font-size: 0.9rem; color: var(--accent);">OPTIMIZACIÓN & CALIDAD DE INFORMACIÓN GERENCIAL</p>
-                <ul>
-                    <li>Normalización y Depuración</li>
-                    <li>Migración e Integración</li>
-                    <li>Tableros de Control & KPIs</li>
-                    <li>Gobierno de Datos</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>2. Auditoría y Control de Inventarios</h3>
-                <p style="font-size: 0.9rem; color: var(--accent);">PROTECCIÓN DE ACTIVOS & TRAZABILIDAD LOGÍSTICA</p>
-                <ul>
-                    <li>Auditoría Física y Conciliación</li>
-                    <li>Trazabilidad Patrimonial</li>
-                    <li>Detercción de Inconsistencias</li>
-                    <li>Manuales de Procedimientos</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- CATÁLOGO DE 10 ARCHIVOS / RECURSOS SELECCIONABLES -->
-        <div class="catalog" id="catalogo">
+        <!-- ================= PANTALLA 2: CATÁLOGO (IMAGEN 2) ================= -->
+        <div id="pantalla-catalogo" class="view-section catalog">
+            <!-- Botón de Regresar -->
+            <button class="btn" onclick="cambiarVista('pantalla-inicio')" style="background: #2a3b5f; color: var(--text-light); margin-bottom: 20px;">← Regresar al Inicio</button>
+
             <h2>Catálogo de Herramientas y Recursos Descargables</h2>
             <p style="text-align: center; color: var(--text-gray);">Seleccione el archivo o herramienta digital que necesite para optimizar su gestión operativa.</p>
             
@@ -199,7 +222,7 @@
                     </div>
                     <div>
                         <div class="price">$25.00</div>
-                        <a href="archivo1.xlsx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo1.xlsx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -211,7 +234,7 @@
                     </div>
                     <div>
                         <div class="price">$35.00</div>
-                        <a href="archivo2.pdf" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo2.pdf" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -223,7 +246,7 @@
                     </div>
                     <div>
                         <div class="price">$50.00</div>
-                        <a href="archivo3.xlsx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo3.xlsx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -235,7 +258,7 @@
                     </div>
                     <div>
                         <div class="price">$40.00</div>
-                        <a href="archivo4.xlsx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo4.xlsx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -247,7 +270,7 @@
                     </div>
                     <div>
                         <div class="price">$20.00</div>
-                        <a href="archivo5.pdf" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo5.pdf" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -259,7 +282,7 @@
                     </div>
                     <div>
                         <div class="price">$30.00</div>
-                        <a href="archivo6.xlsx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo6.xlsx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -271,7 +294,7 @@
                     </div>
                     <div>
                         <div class="price">$15.00</div>
-                        <a href="archivo7.pdf" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo7.pdf" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -283,7 +306,7 @@
                     </div>
                     <div>
                         <div class="price">$25.00</div>
-                        <a href="archivo8.docx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo8.docx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -295,7 +318,7 @@
                     </div>
                     <div>
                         <div class="price">$30.00</div>
-                        <a href="archivo9.xlsx" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo9.xlsx" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
@@ -307,10 +330,15 @@
                     </div>
                     <div>
                         <div class="price">$99.00</div>
-                        <a href="archivo10.zip" class="btn" download>Descargar / Adquirir</a>
+                        <a href="archivo10.zip" class="btn" style="display: block; text-align: center;" download>Descargar / Adquirir</a>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Botón inferior adicional de Regresar -->
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn" onclick="cambiarVista('pantalla-inicio')" style="background: #2a3b5f; color: var(--text-light);">← Regresar al Inicio</button>
             </div>
         </div>
 
@@ -320,6 +348,20 @@
         <p>📞 Teléfonos: 0416-4144017 / 0416-8337914 | ✉️ Correo: mgarcia845@gmail.com</p>
         <p>&copy; 2026 Marcelo García - Todos los derechos reservados.</p>
     </footer>
+
+    <!-- SCRIPT DE TRANSICIÓN ENTRE PANTALLAS -->
+    <script>
+        function cambiarVista(idVista) {
+            // Ocultar todas las pantallas
+            document.querySelectorAll('.view-section').forEach(seccion => {
+                seccion.classList.remove('active');
+            });
+            // Mostrar la pantalla seleccionada
+            document.getElementById(idVista).classList.add('active');
+            // Subir la página arriba del todo suavemente
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
