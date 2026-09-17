@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcelo García | Consultoría TI & Operaciones</title>
+    <title>Marcelo García | Consultoría TI & Operaciones - Catálogo de Recursos</title>
     <style>
         :root {
             --bg-dark: #0b132b;
@@ -36,7 +36,7 @@
             font-weight: 400;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
         }
@@ -72,34 +72,69 @@
         .service-card li {
             margin-bottom: 8px;
         }
+        
+        /* SECCIÓN DE CATÁLOGO / RECURSOS */
         .catalog {
-            margin-top: 40px;
+            margin-top: 50px;
+            border-top: 2px dashed #2a3b5f;
+            padding-top: 40px;
         }
         .catalog h2 {
             text-align: center;
             color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            margin-top: 30px;
         }
         .product-card {
             background: #131b2e;
             border: 1px solid #2a3b5f;
             border-radius: 8px;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .product-card h4 {
+            color: var(--text-light);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        .product-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+        .price {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin: 10px 0;
         }
         .btn {
-            display: inline-block;
+            display: block;
+            text-align: center;
             background: var(--accent);
             color: var(--bg-dark);
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #3ab0d5;
         }
         footer {
             text-align: center;
@@ -119,10 +154,11 @@
     </header>
 
     <div class="container">
+        <!-- SECCIÓN PRINCIPAL / SERVICIOS -->
         <div class="hero">
             <h2 style="color: var(--accent); margin-top: 0;">Transforme el caos operativo en decisiones rentables</h2>
             <p style="color: var(--text-gray);">Ayudo a empresas y organizaciones a eliminar las fugas de inventario, estructurar sus bases de datos dispersas y construir indicadores clave (KPIs) confiables para una gestión transparente y eficiente.</p>
-            <a href="https://wa.me/584164144017" class="btn">Agende una Sesión de Diagnóstico Inicial</a>
+            <a href="https://wa.me/584164144017" class="btn" style="display: inline-block; width: auto; padding: 12px 25px;">Agende una Sesión de Diagnóstico Inicial</a>
         </div>
 
         <div class="services-grid">
@@ -142,34 +178,142 @@
                 <ul>
                     <li>Auditoría Física y Conciliación</li>
                     <li>Trazabilidad Patrimonial</li>
-                    <li>Detección de Inconsistencias</li>
+                    <li>Detercción de Inconsistencias</li>
                     <li>Manuales de Procedimientos</li>
                 </ul>
             </div>
         </div>
 
-        <!-- SECCIÓN DE CATÁLOGO DE PRODUCTOS -->
-        <div class="catalog">
-            <h2>Catálogo de Herramientas y Productos</h2>
-            <p style="text-align: center; color: var(--text-gray);">Adquiera soluciones prácticas listas para implementar en su negocio.</p>
+        <!-- CATÁLOGO DE 10 ARCHIVOS / RECURSOS SELECCIONABLES -->
+        <div class="catalog" id="catalogo">
+            <h2>Catálogo de Herramientas y Recursos Descargables</h2>
+            <p style="text-align: center; color: var(--text-gray);">Seleccione el archivo o herramienta digital que necesite para optimizar su gestión operativa.</p>
             
             <div class="product-grid">
-                <!-- Producto 1 (Ejemplo) -->
+                
+                <!-- Recurso 1 -->
                 <div class="product-card">
-                    <h4 style="color: var(--text-light);">Plantilla de Control de Inventarios</h4>
-                    <p style="color: var(--text-gray); font-size: 0.9rem;">Formato automatizado en Excel para control de entradas, salidas y merma.</p>
-                    <p style="font-weight: bold; color: var(--accent);">$25.00</p>
-                    <a href="Plantilla_1.xlsx" class="btn">Comprar / Consultar</a>
+                    <div>
+                        <h4>1. Plantilla de Control de Inventarios</h4>
+                        <p>Formato en Excel automatizado para el registro de entradas, salidas y mermas en almacén.</p>
+                    </div>
+                    <div>
+                        <div class="price">$25.00</div>
+                        <a href="archivo1.xlsx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
                 </div>
-                <!-- Producto 2 (Ejemplo) -->
+
+                <!-- Recurso 2 -->
                 <div class="product-card">
-                    <h4 style="color: var(--text-light);">Manual de Procedimientos de Auditoría</h4>
-                    <p style="color: var(--text-gray); font-size: 0.9rem;">Guía paso a paso para levantar inventarios físicos sin errores.</p>
-                    <p style="font-weight: bold; color: var(--accent);">$40.00</p>
-                    <a href="mailto:mgarcia845@gmail.com?subject=Interes en Manual de Procedimientos" class="btn">Comprar / Consultar</a>
+                    <div>
+                        <h4>2. Manual de Auditoría Física</h4>
+                        <p>Guía paso a paso para la correcta ejecución de levantamientos físicos de inventario sin errores.</p>
+                    </div>
+                    <div>
+                        <div class="price">$35.00</div>
+                        <a href="archivo2.pdf" class="btn" download>Descargar / Adquirir</a>
+                    </div>
                 </div>
+
+                <!-- Recurso 3 -->
+                <div class="product-card">
+                    <div>
+                        <h4>3. Dashboard de KPIs Logísticos</h4>
+                        <p>Tablero interactivo en Excel/PowerBI para medir rotación de inventarios y niveles de servicio.</p>
+                    </div>
+                    <div>
+                        <div class="price">$50.00</div>
+                        <a href="archivo3.xlsx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 4 -->
+                <div class="product-card">
+                    <div>
+                        <h4>4. Matriz de Riesgo y Gobierno de Datos</h4>
+                        <p>Herramienta para evaluar la calidad, seguridad y puntos críticos en las bases de datos de la empresa.</p>
+                    </div>
+                    <div>
+                        <div class="price">$40.00</div>
+                        <a href="archivo4.xlsx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 5 -->
+                <div class="product-card">
+                    <div>
+                        <h4>5. Guía de Depuración de Bases de Datos</h4>
+                        <p>Metodología estándar para limpiar registros duplicados, nulos o mal estructurados en SQL o Excel.</p>
+                    </div>
+                    <div>
+                        <div class="price">$20.00</div>
+                        <a href="archivo5.pdf" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 6 -->
+                <div class="product-card">
+                    <div>
+                        <h4>6. Formato de Conciliación Patrimonial</h4>
+                        <p>Plantilla diseñada para cruzar activos fijos contables contra la realidad física en campo.</p>
+                    </div>
+                    <div>
+                        <div class="price">$30.00</div>
+                        <a href="archivo6.xlsx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 7 -->
+                <div class="product-card">
+                    <div>
+                        <h4>7. Checklist de Control Interno TI</h4>
+                        <p>Verificación de seguridad, respaldos y accesos a sistemas críticos de operaciones.</p>
+                    </div>
+                    <div>
+                        <div class="price">$15.00</div>
+                        <a href="archivo7.pdf" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 8 -->
+                <div class="product-card">
+                    <div>
+                        <h4>8. Modelo de Políticas de Inventario</h4>
+                        <p>Documento editable en Word con lineamientos de máximos, mínimos y puntos de reorden.</p>
+                    </div>
+                    <div>
+                        <div class="price">$25.00</div>
+                        <a href="archivo8.docx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 9 -->
+                <div class="product-card">
+                    <div>
+                        <h4>9. Plantilla de Análisis ABC de Inventarios</h4>
+                        <p>Clasifique su inventario según la Ley de Pareto (Artículos A, B y C) de forma automática.</p>
+                    </div>
+                    <div>
+                        <div class="price">$30.00</div>
+                        <a href="archivo9.xlsx" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
+                <!-- Recurso 10 -->
+                <div class="product-card">
+                    <div>
+                        <h4>10. Kit Integral de Consultoría Operativa</h4>
+                        <p>Paquete completo que incluye flujogramas, actas de entrega y formatos de auditoría general.</p>
+                    </div>
+                    <div>
+                        <div class="price">$99.00</div>
+                        <a href="archivo10.zip" class="btn" download>Descargar / Adquirir</a>
+                    </div>
+                </div>
+
             </div>
         </div>
+
     </div>
 
     <footer>
